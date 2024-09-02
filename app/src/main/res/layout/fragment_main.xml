@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:indeterminateTint="#2B7EFE"
+        android:layout_gravity="center">
+    </ProgressBar>
+        <LinearLayout
+            android:id="@+id/fragment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#313234"
+                    android:orientation="horizontal"
+                    app:cardCornerRadius="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/back_image"
+                            android:backgroundTint="#313234"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:paddingVertical="8dp"
+                            android:src="@drawable/search1">
+                        </ImageView>
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="10dp"
+                            android:background="@drawable/rounded_corners_background"
+                            android:paddingHorizontal="10dp"
+                            android:text=""
+                            android:inputType="textEmailAddress"
+                            android:textSize="16sp"
+                            android:hint="Должность, ключевые слова"
+                            android:textColor="@color/white">
+                        </EditText>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:backgroundTint="#313234"
+                    android:drawableBottom="@drawable/filter"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:scaleType="centerCrop"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="10dp"
+                    app:iconPadding="10dp">
+                </Button>
+
+            </LinearLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/RVRec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="16dp"
+                        android:orientation="horizontal">
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                    <LinearLayout
+                        android:id="@+id/linear_vacancy_sort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+                        <TextView
+                            android:id="@+id/all_vacancy_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Вакансии"
+                            android:textSize="14sp">
+                        </TextView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="По соответствию "
+                                android:textColor="#2B7EFE"
+                                android:layout_margin="0dp"
+                                android:padding="0dp"
+                                android:textSize="14sp">
+                            </TextView>
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_margin="0dp"
+                                android:layout_gravity="bottom"
+                                android:padding="0dp"
+                                android:src="@drawable/sort">
+                            </ImageView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/vacancies_for_you"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Вакансии для вас"
+                            android:textSize="20sp">
+                        </TextView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/RVVacancy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="horizontal">
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                        <Button
+                            android:id="@+id/button_all_vacancies"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="#2B7EFE"
+                            android:enabled="true"
+                            android:text="Ещё 0 вакансий"
+                            android:textSize="16sp"
+                            android:textColor="#FFFFFF"
+                            app:cornerRadius="8dp">
+                        </Button>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+</FrameLayout>
